@@ -1,2 +1,18 @@
-# qlik-sense-compress-old-archive-logs
-Compress (and optionally delete) Qlik Sense logs from ArchivedLogs folder
+# Compress Qlik Sense ArchivedLogs
+
+`PowerShell` script that compress Qlik Sense log files from `ArchivedLogs` folder.
+
+### Parameters
+
+- rootPath (mandatory) - the actual location to the `ArchivedLogs` folder
+- maxDays (mandatory) - greater than `0`. Pickup files older than X days
+- deleteCompressedFilesArg - `true`/`false` remove the deleted logs files after compressing?
+- storePath - but default the zip files will be created in the same folder where the log files are/were. If needed to specify different location then use this parameter. The script will create the same folder structure in the target location
+
+### Postman collection
+
+The `Postman` collection can be used to create the external reload task that can run the script. Make the necessary changes after the collection is imported into `Postman`. The collection is set to use `JWT` via `jwt` virtual proxy.
+
+### WARNING
+
+**Please test it in lower environment before running it in Production!**
